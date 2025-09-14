@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: todo-api
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -k uvicorn.workers.UvicornWorker -w 2 -b 0.0.0.0:10000 main:app
+    envVars:
+      - key: DATABASE_URL
+        sync: false  # set in Render dashboard
