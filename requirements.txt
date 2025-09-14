@@ -4,4 +4,3 @@ sqlmodel
 psycopg[binary]
 gunicorn
 python-dotenv
-
